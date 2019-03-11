@@ -1,5 +1,5 @@
 ## Welcome to Apriori Algorithm with github page
-Websites created from Bootstrap and knowledge from Apriori Algorithm come together to create this website. If you want to use it, you can access the [link](https://github.com/tickstudiu/Apriori/Apriori.html). The developer has modified the code from others. To be able to use again at
+Websites created from Bootstrap and knowledge from Apriori Algorithm come together to create this website. If you want to use it, you can access the [link](https://tickstudiu.github.io/Apriori/Apriori.html). The developer has modified the code from others. To be able to use again at
 
 ### Download
 You can download the sample code at [repository](https://github.com/tickstudiu/Apriori/Apriori.html)
