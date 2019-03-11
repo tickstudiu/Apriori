@@ -1,0 +1,132 @@
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- JavaScript for mining -->
+    <script type="text/javascript" src="jquery/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="Itemset.js"></script>
+    <script type="text/javascript" src="ItemsetCollection.js"></script>
+    <script type="text/javascript" src="AssociationRule.js"></script>
+    <script type="text/javascript" src="Bit.js"></script>
+    <script type="text/javascript" src="AprioriMining.js"></script>
+    <script type="text/javascript" src="Apriori.js"></script>
+
+    <title>Apriori Mining website</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Apriori Algorithm</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/tickstudiu">Link to github</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://drive.google.com/file/d/1W6n86p41ctg1EFFHTqy9CQqbHsEzns0T/view?fbclid=IwAR2rBlMycFwPp4iC2Ofar4ITXSguB3J2maOx4lU6JFY2ifTpF6x8ZLQ1wCQ">Download</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          Created for educational purposes only
+        </span>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container">
+
+      <!-- What is Apriori -->
+      <div class="jumbotron rounded-0 mt-3">
+        <h1 class="display-4">Apriori Algorithm</h1>
+        <p class="lead">Prerequisite – <a href="https://www.geeksforgeeks.org/frequent-item-set-in-data-set-association-rule-mining/">Frequent Item set in Data set (Association Rule Mining)</a>.</p>
+        <hr class="my-4">
+        <p class="text-justify"><span class="font-weight-bold">Apriori algorithm </span>is given by R. Agrawal and R. Srikant in 1994 for finding frequent itemsets in a dataset for boolean association rule. Name of the algorithm is Apriori because it uses prior knowledge of frequent itemset properties. We apply an iterative approach or level-wise search where k-frequent itemsets are used to find k+1 itemsets.To improve the efficiency of level-wise generation of frequent itemsets, an important property is used called Apriori property which helps by reducing the search space.. <a href="https://www.geeksforgeeks.org/apriori-algorithm/">read move</a> </p>
+      </div>
+
+      <!-- Form for calculate -->
+      <form>
+
+        <!-- input Transactions and number of row -->
+        <div class="row">
+          <div class="form-group col-lg-6 col-sm-12">
+            <label>Enter Items:</label>
+            <input type="text" id="ItemsTextBox" class="form-control" placeholder="bread, milk, cheese, beer, umbrella, diaper, water, detergent" required/>
+          </div>
+          <div class="form-group col-lg-6 col-sm-12">
+            <label>Transactions:</label>
+            <input type="number" id="TransCountTextBox" class="form-control" placeholder="5" required/>
+            <section class="mt-2">
+              <small class="form-text text-muted">You can enter the number. To create a sample table.</small>
+            </section>
+          </div>
+        </div>
+
+        <!-- Setup -->
+        <div class="row">
+          <div class="form-group col-lg-6 col-sm-12">
+            <label>Itemset:</label>
+            <textarea id="DBTextBox" class="w-100 h-25" cols="73"></textarea>
+          </div>
+          <div class="col-lg-6 col-sm-12">
+            <div class="form-group">
+              <label>Support Threshold (%):</label>
+              <input type="number" id="SupportThresholdTextBox" class="form-control" placeholder="40.00" required/>
+            </div>
+            <div class="form-group">
+              <label>Confidence Threshold (%):</label>
+              <input type="number" id="ConfidenceThresholdTextBox" class="form-control" placeholder="70.00" required/>
+            </div>
+            <section class="mt-2">
+              <small class="form-text text-muted">The information you see is a sample of the use of the system, which you can edit after editing and forgetting to create a new one. <span class="font-weight-bold">Otherwise the system will keep the old values</span>.</small>
+            </section>
+          </div>
+        </div>
+
+        <!-- Generate and Run the program -->
+        <div class="row">
+          <div class="form-group col-lg-6 col-sm-12 pt-sm-2">
+            <button id="GenerateDBButton" type="button" class="btn btn-primary">Generate DB</button>
+            <button id="ResetDBButton" type="button" class="btn btn-secondary">Reset DB</button>
+          </div>
+          <div class="form-group col-lg-6 col-sm-12 pt-sm-2">
+            <button id="AprioriButton" type="button" class="btn btn-success">Apriori</button>
+          </div>
+        </div>
+
+        <!-- Output -->
+        <div class="row">
+          <div class="col">
+            <textarea id="ResultTextBox" class="w-100 h-25"></textarea>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+    <!-- footer for telling where to go-->
+    <footer style="background: #f7f7f7">
+      <div class="container py-4">
+        <article class=" text-center text-capitalize">
+          create a website by <a href="https://github.com/tickstudiu"><span data-toggle="tooltip" title="Link to find people to create websites.">tickstudiu</span></a>
+        </article>
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
